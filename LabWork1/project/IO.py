@@ -22,3 +22,8 @@ def open_as_text(path: str):
         raise IOError
 
     return input
+
+
+def print_list_of_ints(items: list):
+    output = str.join(' ', [str(i) for i in items])
+    print(output)
