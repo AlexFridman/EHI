@@ -26,6 +26,14 @@ class WordCount(object):
     @staticmethod
     def pretty_output(counts: Counter):
         print("stat:")
-        print("________________________________")
         for w, c in counts.items():
             print("{0}\t{1}".format(w, c))
+
+    @staticmethod
+    def make_sentence(counts: Counter, word_count: int = 10):
+        words = [pair[0] for pair in counts.most_common(word_count)]
+        words[0] = words[0].capitalize()
+        sentence = str.join(' ', words) + '.'
+
+        print(sentence)
+
