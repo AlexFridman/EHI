@@ -19,7 +19,8 @@ class WordCount(object):
 
     @staticmethod
     def calculate(text: str):
-        words = WordCount.simple_text_split(text)
+        text = text.lower()
+        words = WordCount.regexp_text_split(text)
         counts = WordCount.calc_count_of_words(words)
         WordCount.pretty_output(counts)
 
