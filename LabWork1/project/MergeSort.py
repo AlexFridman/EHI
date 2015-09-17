@@ -3,6 +3,11 @@ __author__ = 'AlexF'
 
 class MergeSort(object):
     @staticmethod
+    def sort(items: list):
+        result = MergeSort.merge_sort(items)
+        return result
+
+    @staticmethod
     def merge_sort(m):
         if len(m) <= 1:
             return m
@@ -33,3 +38,4 @@ class MergeSort(object):
         if right:
             result.extend(right[right_idx:])
         return result
+
