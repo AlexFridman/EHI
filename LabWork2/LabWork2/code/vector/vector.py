@@ -1,6 +1,7 @@
 __author__ = 'AlexF'
 
 from collections import Iterable
+from .dimension_mismatch import DimensionMismatch
 
 
 class Vector:
@@ -36,6 +37,29 @@ class Vector:
         else:
             raise TypeError('value is not instance of %s' % self._dtype)
 
+    def _check_type(self, other):
+        if not isinstance(other, Vector):
+            raise TypeError('other must be the instance of Vector')
+
+    def _check_dimension_match(self, other):
+        if self.size != other.size:
+            raise DimensionMismatch()
+
+    def __add__(self, other):
+        self._check_type(other)
+        self._check_dimension_match(other)
+        return Vector([self_i + other_i for self_i, other_i in zip(self, other)])
+
+    def __sub__(self, other):
+        self._check_type(other)
+        self._check_dimension_match(other)
+        return Vector([self_i - other_i for self_i, other_i in zip(self, other)])
+
+    def dot(self, other):
+        self._check_type(other)
+        self._check_dimension_match(other)
+        return sum([self_i * other_i for self_i, other_i in zip(self, other)])
+
     @property
     def size(self):
         return self._size
@@ -53,7 +77,6 @@ class Vector:
     def __repr__(self):
         return 'Vector(%s)' % str(self)
 
-
-if __name__ == '__main__':
-    v = Vector([1, 2, 3, 4])
-    print(repr(v))
+    def __eq__(self, other):
+        return len(self) == len(other) and \
+               all([self_i == other_i for self_i, other_i in zip(self, other)])
