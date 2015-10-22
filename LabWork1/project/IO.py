@@ -1,29 +1,34 @@
+from collections import Counter
+import sys
+
 __author__ = 'AlexF'
 
+
 def open_as_list_of_ints(path: str):
-    strInput = None
-    input = None
     try:
         with open(path, "r+") as f:
-            strInput = f.readline()
-        input = [int(item) for item in strInput.split(' ')]
+            str_input = f.readline()
+        ints = [int(item) for item in str_input.split(' ')]
     except:
         raise IOError
 
-    return input
+    return ints
 
 
 def open_as_text(path: str):
-    input = None
     try:
-        with open(path, "r+") as f:
-            input = f.read().replace('\n', '')
+        with open(path, "r+",encoding='utf8') as f:
+            return f.read()
     except:
         raise IOError
-
-    return input
 
 
 def print_list_of_ints(items: list):
     output = str.join(' ', [str(i) for i in items])
     print(output)
+
+
+def print_word_count_result(counts: Counter):
+    print("stat:")
+    for w, c in counts.items():
+        print("{0}\t{1}".format(w, c))
