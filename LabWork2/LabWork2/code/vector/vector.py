@@ -55,6 +55,9 @@ class Vector:
         self._check_dimension_match(other)
         return Vector([self_i - other_i for self_i, other_i in zip(self, other)])
 
+    def __mul__(self, scalar):
+        return Vector([self_i * scalar for self_i in self])
+
     def dot(self, other):
         self._check_type(other)
         self._check_dimension_match(other)
