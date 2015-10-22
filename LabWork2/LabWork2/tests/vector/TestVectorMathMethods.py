@@ -52,6 +52,11 @@ class TestVectorMathMethods(unittest.TestCase):
         self.assertEqual(False, vect_1 == vect_3)
         self.assertEqual(True, vect_1 == vect_4)
 
+    def test_scalar_multiplication(self):
+        vect_1 = Vector([1] * 5)
+
+        self.assertSequenceEqual([2] * 5, vect_1 * 2)
+
 
 if __name__ == '__main__':
     unittest.main()
