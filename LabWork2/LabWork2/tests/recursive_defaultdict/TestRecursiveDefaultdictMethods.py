@@ -13,3 +13,12 @@ class TestRecursiveDefaultdictMethods(unittest.TestCase):
 
         self.assertEqual(1, rdd['a']['b']['c'])
         self.assertEqual(2, rdd['b']['c']['d'])
+
+    def test_str_repr(self):
+        rdd = RecursiveDefaultdict()
+
+        rdd['a']['b']['c'] = 1
+        self.assertEqual('''{'a': {'b': {'c': 1}}}''', str(rdd))
+
+        rdd['b']['c']['d'] = 2
+        self.assertEqual('''{'a': {'b': {'c': 1}}, 'b': {'c': {'d': 2}}}''', str(rdd))
