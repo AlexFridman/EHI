@@ -4,7 +4,12 @@ import unittest
 from LabWork2.code.json_serializer.json_serializer import JsonSerializer
 
 
-class TestJsonSerializerMethods(unittest.TestCase):
+class TestJsonSerializerDumpsMethod(unittest.TestCase):
+    def test_none_serialization(self):
+        data = None
+
+        self.assertEqual('null', JsonSerializer.dumps(data))
+
     def test_int_serialization(self):
         data = 1
 
@@ -31,9 +36,9 @@ class TestJsonSerializerMethods(unittest.TestCase):
         self.assertEqual('[\"1\", \"2\"]', JsonSerializer.dumps(data))
 
     def test_tuple_of_diff_type_args_serialization(self):
-        data = ('1', 2, 3.3, (4,))
+        data = ('1', 2, 3.3, (4,), None)
 
-        self.assertEqual('[\"1\", 2, 3.3, [4]]', JsonSerializer.dumps(data))
+        self.assertEqual('[\"1\", 2, 3.3, [4], null]', JsonSerializer.dumps(data))
 
     def test_list_of_ints_serialization(self):
         data = [1, 2]
@@ -64,6 +69,11 @@ class TestJsonSerializerMethods(unittest.TestCase):
         data = {'1': '1', '2': '2'}
 
         self.assertEqual('{\"1\": \"1\", \"2\": \"2\"}', JsonSerializer.dumps(data))
+
+    def test_dict_with_diff_type_keys_and_values_serialization(self):
+        data = {'1': '1', 2: '2', (1,): None}
+
+        self.assertEqual('{[1]: null, \"1\": \"1\", 2: \"2\"}', JsonSerializer.dumps(data))
 
 
 if __name__ == '__main__':

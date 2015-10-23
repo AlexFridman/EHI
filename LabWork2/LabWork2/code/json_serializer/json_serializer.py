@@ -2,11 +2,17 @@ __author__ = 'AlexF'
 
 from functools import singledispatch
 
+NoneType = type(None)
+
 
 class JsonSerializer:
     @classmethod
     def dumps(cls, arg):
         return to_json(arg)
+
+    @classmethod
+    def loads(cls, arg):
+        return from_json(arg)
 
 
 @singledispatch
@@ -18,6 +24,12 @@ def to_json(arg):
 @to_json.register(list)
 def _(arg):
     return '[' + ', '.join(_serialize_children(arg)) + ']'
+
+
+@to_json.register(dict)
+def _(arg):
+    return '{' + ', '.join(['{}: {}'.format(to_json(k), to_json(v))
+                            for k, v in sorted(arg.items(), key=lambda x: str(x[0]))]) + '}'
 
 
 def _serialize_children(children: list):
@@ -36,13 +48,15 @@ def _(arg):
     return '\"' + arg + '\"'
 
 
-@to_json.register(dict)
+@to_json.register(NoneType)
 def _(arg):
-    return '{' + ', '.join(['{}: {}'.format(to_json(k), to_json(v))
-                            for k, v in sorted(arg.items(), key=lambda x: x[0])]) + '}'
+    return 'null'
+
+
+@singledispatch
+def from_json(arg):
+    return arg
 
 
 if __name__ == '__main__':
-    data = (1, 2)
-    t = to_json(data)
-    print(JsonSerializer.dumps(data))
+    pass
