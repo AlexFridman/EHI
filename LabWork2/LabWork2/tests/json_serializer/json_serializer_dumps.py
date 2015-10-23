@@ -58,7 +58,7 @@ class TestJsonSerializerDumpsMethod(unittest.TestCase):
     def test_dict_of_int_keys_serialization(self):
         data = {1: 1, 2: 2}
 
-        self.assertEqual('{1: 1, 2: 2}', JsonSerializer.dumps(data))
+        self.assertEqual('{\"1\": 1, \"2\": 2}', JsonSerializer.dumps(data))
 
     def test_dict_with_str_keys_serialization(self):
         data = {'1': 1, '2': 2}
@@ -73,7 +73,7 @@ class TestJsonSerializerDumpsMethod(unittest.TestCase):
     def test_dict_with_diff_type_keys_and_values_serialization(self):
         data = {'1': '1', 2: '2', (1,): None}
 
-        self.assertEqual('{[1]: null, \"1\": \"1\", 2: \"2\"}', JsonSerializer.dumps(data))
+        self.assertRaises(TypeError, lambda: JsonSerializer.dumps(data))
 
 
 if __name__ == '__main__':
