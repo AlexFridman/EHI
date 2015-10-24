@@ -14,8 +14,8 @@ class Vector:
             self._dtype = dtype or int
         elif isinstance(arg, Iterable):
             if dtype is None:
-                dtype = arg[0]
-                if not all([type(v_i) for v_i in arg]):
+                dtype = type(arg[0])
+                if not all([isinstance(v_i, dtype) for v_i in arg]):
                     raise TypeError('all item in Iterable must be the same type')
                 self._values = list(arg)
             else:
