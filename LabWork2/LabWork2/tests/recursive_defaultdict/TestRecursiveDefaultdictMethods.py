@@ -18,7 +18,7 @@ class TestRecursiveDefaultdictMethods(unittest.TestCase):
         rdd = RecursiveDefaultdict()
 
         rdd['a']['b']['c'] = 1
-        self.assertEqual('''{'a': {'b': {'c': 1}}}''', str(rdd))
+        self.assertEqual({'a': {'b': {'c': 1}}}, rdd)
 
         rdd['b']['c']['d'] = 2
-        self.assertEqual('''{'a': {'b': {'c': 1}}, 'b': {'c': {'d': 2}}}''', str(rdd))
+        self.assertEqual({'b': {'c': {'d': 2}}, 'a': {'b': {'c': 1}}}, rdd)
