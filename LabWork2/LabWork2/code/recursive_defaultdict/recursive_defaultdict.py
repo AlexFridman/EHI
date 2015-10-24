@@ -22,7 +22,10 @@ class _defaultdict(dict):
         return dict.__repr__(self)
 
 
-RecursiveDefaultdict = lambda: _defaultdict(RecursiveDefaultdict)
+class RecursiveDefaultdict(_defaultdict):
+    def __init__(self):
+        super(RecursiveDefaultdict, self).__init__(lambda: _defaultdict(RecursiveDefaultdict))
+
 
 if __name__ == '__main__':
     rdd = RecursiveDefaultdict()
