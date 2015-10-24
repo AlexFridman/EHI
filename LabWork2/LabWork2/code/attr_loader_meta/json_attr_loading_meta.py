@@ -1,24 +1,27 @@
 __author__ = 'AlexF'
 import json
-from .attrs_loading_error import AttrsLoadingError
+from LabWork2.code.attr_loader_meta.attrs_loading_error import AttrsLoadingError
 
 
 class AttrLoaderMeta(type):
-    def __new__(cls, name, parents, dct):
-        if 'attrs_path' in dct:
-            try:
-                with open(dct['attrs_path'], 'r') as fp:
-                    attrs = json.load(fp)
-            except (FileNotFoundError, FileExistsError, ValueError):
-                raise AttrsLoadingError()
+    def __new__(mcs, name, parents, dct):
+        try:
+            with open(mcs._attrs_path, 'r') as fp:
+                attrs = json.load(fp)
+                dct = mcs._merge_attrs(attrs, dct)
+        except Exception:
+            raise AttrsLoadingError()
 
-        del dct['attrs_path']
-        dct.update(attrs)
+        return super(AttrLoaderMeta, mcs).__new__(mcs, name, parents, dct)
 
-        return super(AttrLoaderMeta, cls).__new__(cls, name, parents, dct)
+    def _merge_attrs(attrs_1: dict, attrs_2: dict):
+        result = attrs_1.copy()
+        for name, value in attrs_2.items():
+            if name not in result:
+                result[name] = value
+        return result
 
-
-if __name__ == '__main__':
-    attrs_path = 'D:/attrs/attrs.json'
-    obj = AttrLoaderMeta('Foo', (), {'attrs_path': attrs_path})
-    print(obj.__dict__)
+    @classmethod
+    def create(mcs, attrs_path):
+        AttrLoaderMeta._attrs_path = attrs_path
+        return AttrLoaderMeta
