@@ -20,8 +20,8 @@ class Field:
         if self._perform_type_cast and not isinstance(value, self._dtype):
             try:
                 value = self.cast(value)
-            except TypeError:
-                raise TypeError('unsuccessful type cast')
+            except Exception:
+                raise ValueError('unsuccessful type cast')
         if value is None:
             value = self._default_value
 
@@ -35,4 +35,4 @@ class StringField(Field):
 
 class IntField(Field):
     def __init__(self, def_val=0, perform_type_check=False, perform_type_cast=False):
-        super(StringField, self).__init__(int, def_val, perform_type_check, perform_type_cast)
+        super(IntField, self).__init__(int, def_val, perform_type_check, perform_type_cast)
