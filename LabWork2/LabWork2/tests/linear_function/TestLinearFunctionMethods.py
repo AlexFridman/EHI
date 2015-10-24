@@ -23,10 +23,10 @@ class TestLinearFunctionMethods(unittest.TestCase):
         param_1 = Parameter('x')
         const_1 = Constant(5)
         mul_1 = const_1 * param_1
-        root = LinearFunction(lambda x: x ** (1 / 2), [], 'sqrt({})')
-        root_1 = root(mul_1)
+        doubler = LinearFunction(lambda x: x * 2, [], 'sqrt({})')
+        doubler_1 = doubler(mul_1)
 
-        self.assertEqual(5, root_1(25))
+        self.assertEqual(50, doubler(25))
 
 
 if __name__ == '__main__':
