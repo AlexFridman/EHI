@@ -34,7 +34,7 @@ class TestVectorInit(unittest.TestCase):
         self.assertEqual(float, vector.dtype)
 
     def test_inst_when_iterable_of_diff_types_objects_passed(self):
-        arg = [1, 2, 3, 4, 5]
+        arg = [1, 2, 3, 4, 5.5]
         inst = lambda: Vector(arg)
 
         self.assertRaises(TypeError, inst)
