@@ -6,7 +6,7 @@ import tempfile
 from heapq import heappush, heappop, heapify
 from LabWork2.code.ext_mem_merge_sort.invalid_chunk_borders import InvalidChunkBorders
 from LabWork2.code.ext_mem_merge_sort.invalid_data_error import InvalidDataError
-from LabWork2.code.ext_mem_merge_sort.cannot_create_temp_file_error import CannotCreateTempFile
+from LabWork2.code.ext_mem_merge_sort.cannot_create_temp_file_error import CannotCreateTempFileError
 
 
 class ExternalMemoryMergeSort:
