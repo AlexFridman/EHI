@@ -44,7 +44,7 @@ class ExternalMemoryMergeSort:
         sorted_data = self._merge_sort(data)
         temp_file = self._create_temp_file()
         if not temp_file:
-            raise CannotCreateTempFile()
+            raise CannotCreateTempFileError()
         self._temp_files[chunk_n] = temp_file
         self._write_chunk_to_temp_file(self._temp_files[chunk_n], sorted_data)
 
@@ -56,7 +56,7 @@ class ExternalMemoryMergeSort:
                 for l_number in range(chunk_start):
                     next(fp)
             except StopIteration:
-                raise InvalidChunkBorders()
+                raise InvalidChunkBordersError()
 
             for l_number in range(chunk_end - chunk_start):
                 try:
@@ -64,7 +64,7 @@ class ExternalMemoryMergeSort:
                     number = int(line)
                     chunk.append(number)
                 except ValueError:
-                    raise InvalidData()
+                    raise InvalidDataError()
 
             return chunk
 
