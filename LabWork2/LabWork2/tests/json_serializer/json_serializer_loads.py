@@ -89,6 +89,9 @@ class TestJsonSerializerLoadsMethod(unittest.TestCase):
         json_data = json.dumps(data)
         self.assertEqual(json.loads(json_data), JsonSerializer.loads(json_data))
 
+    def test_invalid_data(self):
+        json_data = 'some invalid data'
+        self.assertRaises(ValueError, lambda: JsonSerializer.loads(json_data))
 
 if __name__ == '__main__':
     unittest.main()
