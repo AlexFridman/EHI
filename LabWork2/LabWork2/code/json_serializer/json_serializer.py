@@ -150,8 +150,7 @@ def from_json(data: str):
             index, token = _next_token(index)
             return index, success, None
         else:
-            success = False
-            return index, success, None
+            raise ValueError('No JSONObject can be decoded')
 
     def _parse_string(index: int, success: bool) -> (int, bool, str):
         s = ''
