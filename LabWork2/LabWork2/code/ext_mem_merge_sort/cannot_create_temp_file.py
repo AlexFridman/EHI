@@ -1,5 +1,5 @@
 __author__ = 'AlexF'
 
 
-class CannotCreateTempFile(Exception):
+class CannotCreateTempFileError(Exception):
     pass
