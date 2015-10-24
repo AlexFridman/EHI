@@ -10,14 +10,15 @@ from LabWork2.code.ext_mem_merge_sort.cannot_create_temp_file_error import Canno
 
 
 class ExternalMemoryMergeSort:
-    def sort(self, path, result_path):
+    def sort(self, path, result_path, verbose=False):
         if not self._is_file_exists(path):
             raise FileNotFoundError('file {} not exists'.format(path))
         self._data_size = self._define_data_size(path)
         self._chunk_count, self._chunk_shifts = self._define_chunk_count_and_shifts(self._data_size)
         self._temp_files = {}
         for chunk_i in range(self._chunk_count):
-            print('#{}'.format(chunk_i))
+            if verbose:
+                print('#{}'.format(chunk_i))
             self._sort_chunk(path, chunk_i)
 
         self.merge(result_path)
