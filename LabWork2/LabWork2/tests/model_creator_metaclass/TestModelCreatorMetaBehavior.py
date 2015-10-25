@@ -73,3 +73,70 @@ class TestModelCreatorMetaMethods(unittest.TestCase):
         self.assertTrue(hasattr(bar, 'age'))
         self.assertEqual('sasha', bar.name)
         self.assertEqual(17, bar.age)
+
+    def test_object_explicit_ctor_also_working(self):
+        class Foo(metaclass=ModelCreatorMeta):
+            def __init__(self):
+                self.last_name = 'Ivanov'
+
+            name = StringField('petia')
+            age = IntField(17)
+
+        foo = Foo()
+
+        self.assertTrue(hasattr(foo, 'name'))
+        self.assertTrue(hasattr(foo, 'age'))
+        self.assertTrue(hasattr(foo, 'last_name'))
+        self.assertEqual('petia', foo.name)
+        self.assertEqual(17, foo.age)
+        self.assertEqual('Ivanov', foo.last_name)
+
+    def test_object_explicit_ctor_is_more_important(self):
+        class Foo(metaclass=ModelCreatorMeta):
+            def __init__(self):
+                self.name = 'sasha'
+
+            name = StringField('petia')
+            age = IntField(17)
+
+        foo = Foo()
+
+        self.assertTrue(hasattr(foo, 'name'))
+        self.assertTrue(hasattr(foo, 'age'))
+        self.assertEqual('sasha', foo.name)
+        self.assertEqual(17, foo.age)
+
+    def test_object_derived_class_ctor_overrides_base_class_attrs(self):
+        class Foo(metaclass=ModelCreatorMeta):
+            name = StringField('petia')
+            age = IntField(17)
+
+        class Bar(Foo):
+            def __init__(self):
+                self.name = 'sasha'
+
+        bar = Bar()
+
+        self.assertTrue(hasattr(bar, 'name'))
+        self.assertTrue(hasattr(bar, 'age'))
+        self.assertEqual('sasha', bar.name)
+        self.assertEqual(17, bar.age)
+
+    def test_base_class_ctor_recieves_args_from_derived(self):
+        class Foo(metaclass=ModelCreatorMeta):
+            def __init__(self, name):
+                self.name = name
+
+            name = StringField('petia')
+            age = IntField(17)
+
+        class Bar(Foo):
+            def __init__(self, name):
+                super(Bar, self).__init__(name)
+
+        bar = Bar(name='sasha')
+
+        self.assertTrue(hasattr(bar, 'name'))
+        self.assertTrue(hasattr(bar, 'age'))
+        self.assertEqual('sasha', bar.name)
+        self.assertEqual(17, bar.age)
