@@ -2,7 +2,7 @@ __author__ = 'AlexF'
 
 import unittest
 
-from LabWork2.code.cached_decorator.cached import cached
+from LabWork2.code.cached_decorator import cached
 
 
 class TestCachedBehavior(unittest.TestCase):
