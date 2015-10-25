@@ -53,9 +53,8 @@ class ModelCreatorMeta(type):
         fields_to_create = self.fields_to_create
 
         for f_name, f_obj in fields_to_create.items():
-            if f_name not in self.__dict__:
-                f_value = kwargs.get(f_name, None)
-                self.__dict__[f_name] = f_obj.proceed_value(f_value)
+            f_value = kwargs.get(f_name, None)
+            self.__dict__[f_name] = f_obj.proceed_value(f_value)
 
 
 if __name__ == '__main__':
