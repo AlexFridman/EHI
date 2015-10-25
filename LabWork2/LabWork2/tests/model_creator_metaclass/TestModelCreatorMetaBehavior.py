@@ -124,19 +124,22 @@ class TestModelCreatorMetaMethods(unittest.TestCase):
 
     def test_base_class_ctor_recieves_args_from_derived(self):
         class Foo(metaclass=ModelCreatorMeta):
-            def __init__(self, name):
+            def __init__(self, name, city):
                 self.name = name
+                self.city = city
 
             name = StringField('petia')
             age = IntField(17)
 
         class Bar(Foo):
-            def __init__(self, name):
-                super(Bar, self).__init__(name)
+            def __init__(self, name, city):
+                super(Bar, self).__init__(name, city)
 
-        bar = Bar(name='sasha')
+        bar = Bar('sasha', 'minsk')
 
         self.assertTrue(hasattr(bar, 'name'))
         self.assertTrue(hasattr(bar, 'age'))
+        self.assertTrue(hasattr(bar, 'city'))
         self.assertEqual('sasha', bar.name)
         self.assertEqual(17, bar.age)
+        self.assertEqual('minsk', bar.city)
