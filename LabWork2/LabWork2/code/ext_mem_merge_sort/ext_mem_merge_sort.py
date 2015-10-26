@@ -5,6 +5,8 @@ import tempfile
 
 import numpy as np
 
+from .invalid_data_error import InvalidDataError
+
 
 class ExternalMemoryMergeSort:
     def sort(self, path, result_path, verbose=False):
@@ -58,8 +60,11 @@ class ExternalMemoryMergeSort:
 
             for l_number in range(chunk_end - chunk_start + 1):
                 line = fp.readline()
-                number = int(line)
-                chunk.append(number)
+                try:
+                    number = int(line)
+                    chunk.append(number)
+                except ValueError:
+                    raise InvalidDataError()
 
             return chunk
 
