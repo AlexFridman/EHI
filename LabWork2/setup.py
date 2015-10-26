@@ -17,5 +17,5 @@ setup(
     license='',
     author='AlexF',
     author_email='',
-    description=''
+    description='', requires=['numpy', 'numpy']
 )
