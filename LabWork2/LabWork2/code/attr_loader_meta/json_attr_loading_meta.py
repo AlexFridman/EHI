@@ -1,6 +1,7 @@
 __author__ = 'AlexF'
 import json
-from LabWork2.code.attr_loader_meta.attrs_loading_error import AttrsLoadingError
+
+from .attrs_loading_error import AttrsLoadingError
 
 
 class AttrLoaderMeta(type):
