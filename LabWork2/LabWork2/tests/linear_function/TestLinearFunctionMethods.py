@@ -20,13 +20,17 @@ class TestLinearFunctionMethods(unittest.TestCase):
         self.assertEqual(25, mul_1(5))
 
     def test_composition(self):
+        class Doubler(LinearFunction):
+            def __init__(self):
+                super(Doubler, self).__init__(lambda x: x * Constant(2), [self], '({}) * 2')
+
         param_1 = Parameter('x')
         const_1 = Constant(5)
         mul_1 = const_1 * param_1
-        root = LinearFunction(lambda x: x ** (1 / 2), [], 'sqrt({})')
-        root_1 = root(mul_1)
+        doubler = Doubler()
+        doubler_1 = doubler(mul_1)
 
-        self.assertEqual(5, root_1(25))
+        self.assertEqual(50, doubler_1(5))
 
 
 if __name__ == '__main__':
