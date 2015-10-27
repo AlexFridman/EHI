@@ -2,8 +2,6 @@ __author__ = 'AlexF'
 
 from .cached_decorator.cached import cached
 from .ext_mem_merge_sort import ExternalMemoryMergeSort
-from .ext_mem_merge_sort import CannotCreateTempFileError
-from .ext_mem_merge_sort import InvalidChunkBordersError
 from .ext_mem_merge_sort import InvalidDataError
 from .filterable_list import FilterableList
 from .json_serializer import JsonSerializer
