@@ -4,7 +4,7 @@ import json
 from .attrs_loading_error import AttrsLoadingError
 
 
-class AttrLoaderMeta(type):
+class JsonAttrLoaderMeta(type):
     def __new__(mcs, name, parents, dct):
         try:
             with open(mcs._attrs_path, 'r') as fp:
@@ -13,7 +13,7 @@ class AttrLoaderMeta(type):
         except Exception:
             raise AttrsLoadingError()
 
-        return super(AttrLoaderMeta, mcs).__new__(mcs, name, parents, dct)
+        return super(JsonAttrLoaderMeta, mcs).__new__(mcs, name, parents, dct)
 
     def _merge_attrs(attrs_1: dict, attrs_2: dict):
         result = attrs_1.copy()
@@ -24,5 +24,5 @@ class AttrLoaderMeta(type):
 
     @classmethod
     def create(mcs, attrs_path):
-        AttrLoaderMeta._attrs_path = attrs_path
-        return AttrLoaderMeta
+        JsonAttrLoaderMeta._attrs_path = attrs_path
+        return JsonAttrLoaderMeta

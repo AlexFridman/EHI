@@ -4,7 +4,7 @@ import unittest
 import json
 import os
 
-from LabWork2.code.attr_loader_meta.json_attr_loading_meta import AttrLoaderMeta
+from LabWork2.code.attr_loader_meta.json_attr_loader_meta import JsonAttrLoaderMeta
 from LabWork2.code.attr_loader_meta.attrs_loading_error import AttrsLoadingError
 
 
@@ -15,7 +15,7 @@ class TestAttrLoaderMetaBehavior(unittest.TestCase):
         with open(attrs_file_path, 'w+') as fp:
             json.dump(attrs, fp)
 
-        class Foo(metaclass=AttrLoaderMeta.create(attrs_file_path)):
+        class Foo(metaclass=JsonAttrLoaderMeta.create(attrs_file_path)):
             attrs_path = attrs_file_path
 
         os.remove(attrs_file_path)
@@ -27,7 +27,7 @@ class TestAttrLoaderMetaBehavior(unittest.TestCase):
         attrs_file_path = 'foobar'
 
         def define_class():
-            class Foo(metaclass=AttrLoaderMeta.create(attrs_file_path)):
+            class Foo(metaclass=JsonAttrLoaderMeta.create(attrs_file_path)):
                 attrs_path = attrs_file_path
 
         self.assertRaises(AttrsLoadingError, lambda: define_class())
