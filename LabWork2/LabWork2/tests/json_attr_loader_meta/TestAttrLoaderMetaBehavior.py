@@ -16,7 +16,7 @@ class TestAttrLoaderMetaBehavior(unittest.TestCase):
             json.dump(attrs, fp)
 
         class Foo(metaclass=JsonAttrLoaderMeta.create(attrs_file_path)):
-            attrs_path = attrs_file_path
+            pass
 
         os.remove(attrs_file_path)
         for attr_name, value in attrs.items():
@@ -28,7 +28,7 @@ class TestAttrLoaderMetaBehavior(unittest.TestCase):
 
         def define_class():
             class Foo(metaclass=JsonAttrLoaderMeta.create(attrs_file_path)):
-                attrs_path = attrs_file_path
+                pass
 
         self.assertRaises(AttrsLoadingError, lambda: define_class())
 
