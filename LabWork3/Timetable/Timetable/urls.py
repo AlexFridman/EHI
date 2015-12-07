@@ -22,4 +22,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^faculties$', views.FacultyIndexView.as_view(), name='faculty_index'),
     url(r'^faculty/(?P<pk>[0-9]+)/$', views.FacultyDetailView.as_view(), name='faculty_detail'),
+    url(r'^teachers$', views.FacultyIndexView.as_view(), name='teacher_index'),
+    url(r'^teacher/(?P<pk>[0-9]+)/$', views.FacultyDetailView.as_view(), name='teacher_detail'),
 ]
