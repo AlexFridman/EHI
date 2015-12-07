@@ -2,30 +2,27 @@
 
 {% block title %}Faculties{% endblock %}
 {% block content %}
-    <div class="container-fluid">
-        {% if faculty_list %}
-            {% for faculty in faculty_list %}
-                <div class="row">
-                    <div class="col-md-4">
-                        <img alt="Faculty logo" src="{{ faculty.pic }}" class="img-rounded"/>
-                    </div>
-                    <div class="col-md-8">
-                        <h3>
-                            <a href="faculty/{{ faculty.id }}">{{ faculty }}</a><br>
-                        </h3>
-                    </div>
-                </div>
-
-            {% endfor %}
-        {% else %}
+    {% if faculty_list %}
+        {% for faculty in faculty_list %}
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-4">
+                    <img alt="Faculty logo" src="{{ faculty.pic }}" class="img-rounded"/>
+                </div>
+                <div class="col-md-8">
                     <h3>
-                        There are no faculties in our university.
+                        <a href="faculty/{{ faculty.id }}">{{ faculty }}</a><br>
                     </h3>
                 </div>
             </div>
-        {% endif %}
 
-    </div>
+        {% endfor %}
+    {% else %}
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    There are no faculties in our university.
+                </h3>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

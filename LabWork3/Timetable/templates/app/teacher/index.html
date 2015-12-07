@@ -2,30 +2,27 @@
 
 {% block title %}Teachers{% endblock %}
 {% block content %}
-    <div class="container-fluid">
-        {% if teacher_list %}
-            {% for teacher in teacher_list %}
-                <div class="row">
-                    <div class="col-md-4">
-                        <img alt="Teacher photo" src="{{ teacher.pic }}" class="img-rounded"/>
-                    </div>
-                    <div class="col-md-8">
-                        <h3>
-                            <a href="faculty/{{ teacher.id }}">{{ teacher }}</a><br>
-                        </h3>
-                    </div>
-                </div>
-
-            {% endfor %}
-        {% else %}
+    {% if teacher_list %}
+        {% for teacher in teacher_list %}
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-4">
+                    <img alt="Teacher photo" src="{{ teacher.pic }}" class="img-rounded"/>
+                </div>
+                <div class="col-md-8">
                     <h3>
-                        There are no teacher in our university.
+                        <a href="faculty/{{ teacher.id }}">{{ teacher }}</a><br>
                     </h3>
                 </div>
             </div>
-        {% endif %}
 
-    </div>
+        {% endfor %}
+    {% else %}
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    There are no teacher in our university.
+                </h3>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
