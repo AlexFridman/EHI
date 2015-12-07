@@ -4,7 +4,7 @@ from .models import Faculty
 
 
 class FacultyIndexView(generic.ListView):
-    template_name = 'faculty/index.html'
+    template_name = 'app/faculty/index.html'
     context_object_name = 'faculty_list'
 
     def get_queryset(self):
@@ -13,5 +13,5 @@ class FacultyIndexView(generic.ListView):
 
 class FacultyDetailView(generic.DetailView):
     model = Faculty
-    template_name = 'faculty/detail.html'
+    template_name = 'app/faculty/detail.html'
     context_object_name = 'faculty'

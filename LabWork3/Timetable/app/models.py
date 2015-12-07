@@ -14,6 +14,8 @@ class Faculty(models.Model):
         verbose_name_plural = "faculties"
 
     name = models.TextField()
+    description = models.TextField()
+    #pic = models.ImageField(upload_to='static/app/img/faculty', default='static/app/img/faculty/None/no-img.jpg')
 
     def __str__(self):
         return self.name
