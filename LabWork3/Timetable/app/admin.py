@@ -15,9 +15,9 @@ class GroupAdmin(admin.ModelAdmin):
 
 
 class ClassAdmin(admin.ModelAdmin):
-    list_display = ['start_time', 'name', 'group', 'teacher', 'place']
-    list_filter = ['start_time', 'name', 'group', 'teacher', 'place']
-    search_fields = ['name', 'group']
+    list_display = ['start_time', 'subject_name', 'group', 'teacher', 'place']
+    list_filter = ['start_time', 'subject_name', 'group', 'teacher', 'place']
+    search_fields = ['subject_name', 'group']
 
 
 class PlaceAdmin(admin.ModelAdmin):

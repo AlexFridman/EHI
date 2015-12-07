@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculties</title>
+</head>
+<body>
+{% if faculty_list %}
+    {% for faculty in faculty_list %}
+        <a href="faculty/{{ faculty.id }}">{{ faculty }}</a><br>
+    {% endfor %}
+{% else %}
+    :-(
+{% endif %}
+</body>
+</html>
