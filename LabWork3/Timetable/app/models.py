@@ -34,7 +34,7 @@ class Group(models.Model):
 class Teacher(models.Model):
     name = models.TextField()
     position = models.TextField()
-    description = models.TextField()
+    description = models.TextField(null=True)
 
     def __str__(self):
         return '{}, {}'.format(self.name, self.position)
