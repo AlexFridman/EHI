@@ -39,11 +39,11 @@ class Class(models.Model):
     class Meta:
         verbose_name_plural = "classes"
 
-    name = models.TextField()
+    subject_name = models.TextField()
     place = models.ForeignKey(Place)
     teacher = models.ForeignKey(Teacher)
     group = models.ForeignKey(Group)
     start_time = models.TimeField()
 
     def __str__(self):
-        return '{}|{}|{}|{}|{}'.format(self.start_time, self.name, self.group, self.teacher, self.place)
+        return '{}|{}|{}|{}|{}'.format(self.start_time, self.subject_name, self.group, self.teacher, self.place)
