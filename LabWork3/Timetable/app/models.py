@@ -7,6 +7,9 @@ class Place(models.Model):
 
 
 class Faculty(models.Model):
+    class Meta:
+        verbose_name_plural = "faculties"
+
     name = models.TextField()
 
 
@@ -21,6 +24,9 @@ class Teacher(models.Model):
 
 
 class Class(models.Model):
+    class Meta:
+        verbose_name_plural = "classes"
+
     name = models.TextField()
     place = models.ForeignKey(Place)
     teacher = models.ForeignKey(Teacher)
