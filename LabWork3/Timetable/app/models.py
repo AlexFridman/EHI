@@ -15,7 +15,8 @@ class Faculty(models.Model):
 
     name = models.TextField()
     description = models.TextField()
-    #pic = models.ImageField(upload_to='static/app/img/faculty', default='static/app/img/faculty/None/no-img.jpg')
+
+    # pic = models.ImageField(upload_to='static/app/img/faculty', default='static/app/img/faculty/None/no-img.jpg')
 
     def __str__(self):
         return self.name
@@ -32,6 +33,7 @@ class Group(models.Model):
 class Teacher(models.Model):
     name = models.TextField()
     position = models.TextField()
+    description = models.TextField()
 
     def __str__(self):
         return '{}, {}'.format(self.name, self.position)
