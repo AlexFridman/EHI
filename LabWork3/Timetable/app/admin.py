@@ -1,6 +1,8 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.models import User
 
-from app.models import Faculty, Group, Class, Place, Teacher
+from app.models import Faculty, Group, Class, Place, Teacher, Profile
 
 
 class FacultyAdmin(admin.ModelAdmin):
@@ -30,8 +32,20 @@ class TeacherAdmin(admin.ModelAdmin):
     search_fields = ['name']
 
 
+class ProfileInLine(admin.StackedInline):
+    model = Profile
+    can_delete = False
+
+
+class UserAdmin(UserAdmin):
+    inlines = (ProfileInLine,)
+
+
 admin.site.register(Faculty, FacultyAdmin)
 admin.site.register(Group, GroupAdmin)
 admin.site.register(Class, ClassAdmin)
 admin.site.register(Place, PlaceAdmin)
 admin.site.register(Teacher, TeacherAdmin)
+
+admin.site.unregister(User)
+admin.site.register(User, UserAdmin)
