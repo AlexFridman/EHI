@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -51,3 +52,8 @@ class Class(models.Model):
 
     def __str__(self):
         return '{}|{}|{}|{}|{}'.format(self.start_time, self.subject_name, self.group, self.teacher, self.place)
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User)
+    group = models.ForeignKey(Group)
