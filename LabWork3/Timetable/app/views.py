@@ -1,8 +1,16 @@
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 from django.utils.decorators import method_decorator
 from django.views import generic
 
-from .models import Faculty, Teacher
+from .forms import TimetableSearchForm
+from .models import Faculty, Teacher, Class, Group
+
+
+def index(request):
+    return render_to_response('app/index.html', context_instance=RequestContext(request))
 
 
 class FacultyIndexView(generic.ListView):
@@ -47,3 +55,28 @@ class TeacherDetailView(generic.DetailView):
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         return super(TeacherDetailView, self).dispatch(request, *args, **kwargs)
+
+
+class TimetableView(generic.ListView):
+    template_name = 'app/timetable/classes.html'
+    context_object_name = 'class_list'
+
+    def get_queryset(self):
+        if 'group' not in self.kwargs['group']:
+            pass
+        try:
+            group_id = Group.objects.filter(number=self.kwargs['group']).first().id
+        except AttributeError:
+            pass
+
+        return Class.objects.filter(group=group_id).all()
+
+
+class TimetableSearchView(generic.FormView):
+    template_name = 'app/timetable/index.html'
+    form_class = TimetableSearchForm
+
+    def form_valid(self, form):
+        if 'group' not in form.data:
+            pass
+        return HttpResponseRedirect('/timetable/{}'.format(form.data['group']))
