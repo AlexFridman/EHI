@@ -1,10 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Timetable</title>
-</head>
-<body>
+{% extends "app/master.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron well">
+                <h2>
+                    Timetable application
+                </h2>
 
-</body>
-</html>
+                <p>
+                    A timetable is a kind of schedule that sets out times at which specific events are intended to
+                    occur. It
+                    may also refer to:
+
+                    School timetable, a table for coordinating students, teachers, rooms, and other resources
+                    Time horizon, a fixed point of time in the future at which point certain processes will be evaluated
+                    or
+                    assumed to end
+                    Timeline, a project artifact. It is typically a graphic design showing a long bar labeled with dates
+                    alongside itself and (usually) events labeled on points where they would have happened. It is used
+                    to
+                    show events along a period of time
+                    "Time Table", a track on the 1972 album Foxtrot, by English progressive rock band Genesis
+                    Time Table (film), a 1956 American black-and-white crime film noir
+                    Transport[edit]
+                    Airline timetable, booklets that many airlines worldwide use to inform passengers of several
+                    different
+                    things, such as schedules, fleet, security, in-flight entertainment, food menu, restriction and
+                    phone
+                    contact information
+                    Public transport timetable, a listing of the times that public transport services arrive and depart
+                    specified locations
+                    Timetable and train order, a method of railroad traffic control
+                </p>
+
+                <p>
+                    <a class="btn btn-primary btn-large" href="#">Learn more</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

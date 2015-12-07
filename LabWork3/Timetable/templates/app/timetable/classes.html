@@ -1,0 +1,38 @@
+{% extends "app/master.html" %}
+
+{% block title %}Timetable{% endblock %}
+{% block content %}
+    {% if class_list %}
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <table class="table table-bordered table-hover" align="center">
+                    <tr>
+                        <td>Time</td>
+                        <td>Name</td>
+                        <td>Place</td>
+                        <td>Teacher</td>
+                    </tr>
+                    {% for class in class_list %}
+                        <tr>
+                            <td>{{ class.start_time }}</td>
+                            <td>{{ class.subject_name }}</td>
+                            <td>{{ class.place }}</td>
+                            <td>{{ class.teacher }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+    {% else %}
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    There are no classes for this group.
+                </h3>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
