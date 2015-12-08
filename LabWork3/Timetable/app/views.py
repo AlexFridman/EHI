@@ -62,14 +62,14 @@ class TimetableView(generic.ListView):
     context_object_name = 'class_list'
 
     def get_queryset(self):
-        if 'group' not in self.kwargs['group']:
-            pass
-        try:
-            group_id = Group.objects.filter(number=self.kwargs['group']).first().id
-        except AttributeError:
-            pass
+        # if 'group' not in self.kwargs['group']:
+        #     pass
+        # try:
+        #     group_id = Group.objects.filter(number=self.kwargs['group']).first().id
+        # except AttributeError:
+        #     pass
 
-        return Class.objects.filter(group=group_id).all()
+        return Class.objects.filter(group__number=self.kwargs['group']).all()
 
 
 class TimetableSearchView(generic.FormView):

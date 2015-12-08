@@ -8,7 +8,9 @@
     </title>
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/bootstrap.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'app/css/bootstrap-theme.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/bootstrap-theme.css' %}">
+    <script src="{% static 'app/js/bootstrap.js' %}"></script>
+    <script src="{% static 'app/js/npm.js' %}"></script>
 
 </head>
 <nav class="navbar navbar-default">
@@ -47,7 +49,4 @@
     {% block content %}{% endblock %}
 </div>
 </body>
-
-<script src="{% static 'app/bootstrap.min.js' %}"></script>
-
 </html>
