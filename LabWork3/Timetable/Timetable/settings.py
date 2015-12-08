@@ -72,16 +72,13 @@ WSGI_APPLICATION = 'Timetable.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-DATABASE_ENGINE = 'django.db.backends.oracle'
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
         'USER': 'django',
         'PASSWORD': 'Qw12345!',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
         'PORT': '3306',
 
     }
@@ -102,8 +99,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-
+# STATIC_ROOT = '/static'
 STATIC_URL = '/static/'
 
 LOGIN_URL = '/login/'
 LOGOUT_URL = '/logout/'
+
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
