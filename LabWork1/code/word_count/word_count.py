@@ -1,7 +1,8 @@
 from collections import Counter
+from typing import AnyStr, Callable, Iterable
 
 
-def _tokenize(data: str) -> list:
+def _tokenize(data: AnyStr) -> list:
     """Splits textual data on gaps
     :param data: textual data
     :type data: str
@@ -11,7 +12,7 @@ def _tokenize(data: str) -> list:
     return data.split(' ')
 
 
-def word_count(data: str, tokenizer=None) -> Counter:
+def word_count(data: AnyStr, tokenizer: Callable[[AnyStr], Iterable] = None) -> Counter:
     """Counts frequencies of tokens
     :param data: textual data
     :type data: str
