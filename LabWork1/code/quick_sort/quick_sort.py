@@ -1,12 +1,12 @@
-from typing import Sequence
+from typing import Iterable
 
 
-def quick_sort(array: Sequence) -> Sequence:
+def quick_sort(array: Iterable) -> Iterable:
     """Sorts given sequence in-place
     :param array: sequence of comparable
-    :type array: Sequence
+    :type array: Iterable
     :return: sorted sequence
-    :rtype: Sequence
+    :rtype: Iterable
     """
     if len(array) <= 1:
         return array
