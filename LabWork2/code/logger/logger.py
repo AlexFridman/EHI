@@ -30,5 +30,4 @@ class Logger:
             print(log_message)
 
     def __str__(self):
-        pass
         return ' '.join(self._logs)
