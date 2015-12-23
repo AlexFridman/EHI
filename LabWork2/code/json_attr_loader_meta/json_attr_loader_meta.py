@@ -17,9 +17,7 @@ class JsonAttrLoaderMeta(type):
 
     def _merge_attrs(attrs_1: dict, attrs_2: dict):
         result = attrs_1.copy()
-        for name, value in attrs_2.items():
-            if name not in result:
-                result[name] = value
+        result.update(attrs_2)
         return result
 
     @classmethod

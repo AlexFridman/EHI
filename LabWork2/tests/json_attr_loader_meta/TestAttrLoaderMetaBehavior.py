@@ -4,8 +4,8 @@ import unittest
 import json
 import os
 
-from LabWork2.code.attr_loader_meta.json_attr_loader_meta import JsonAttrLoaderMeta
-from LabWork2.code.attr_loader_meta.attrs_loading_error import AttrsLoadingError
+from LabWork2.code.json_attr_loader_meta.json_attr_loader_meta import JsonAttrLoaderMeta
+from LabWork2.code.json_attr_loader_meta.attrs_loading_error import AttrsLoadingError
 
 
 class TestAttrLoaderMetaBehavior(unittest.TestCase):
