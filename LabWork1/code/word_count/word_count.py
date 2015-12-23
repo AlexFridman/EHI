@@ -11,14 +11,14 @@ def _tokenize(data: str) -> list:
     return data.split(' ')
 
 
-def word_count(data: str, tokenizer=None) -> dict:
+def word_count(data: str, tokenizer=None) -> Counter:
     """Counts frequencies of tokens
     :param data: textual data
     :type data: str
     :param tokenizer: tokenizer
     :type tokenizer: callable
     :return: dict of tokens frequencies of tokens
-    :rtype: dict
+    :rtype: Counter
     """
     tokenizer = tokenizer or _tokenize
     tokens = tokenizer(data)
