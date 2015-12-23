@@ -3,6 +3,7 @@ from distutils.core import setup
 setup(
     name='LabWork2',
     version='',
+    package_dir={'LabWork2': '../LabWork2'},
     packages=['LabWork2', 'LabWork2.code', 'LabWork2.code.logger', 'LabWork2.code.vector', 'LabWork2.code.xrange',
               'LabWork2.code.filterable_list', 'LabWork2.code.json_serializer', 'LabWork2.code.linear_function',
               'LabWork2.code.attr_loader_meta', 'LabWork2.code.cached_decorator', 'LabWork2.code.ext_mem_merge_sort',
