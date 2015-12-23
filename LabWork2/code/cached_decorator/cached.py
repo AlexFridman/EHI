@@ -4,6 +4,7 @@ import functools
 
 
 def cached(func):
+    """Your own memory leak"""
     cache = {}
 
     @functools.wraps(func)
