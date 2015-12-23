@@ -1,8 +1,9 @@
 from LabWork1.code.word_count import word_count
 from nltk.tokenize import regexp_tokenize
+from typing import AnyStr
 
 
-def summarize_text(text: str, n_common_words: int = 10) -> str:
+def summarize_text(text: AnyStr, n_common_words: int = 10) -> str:
     """Returns a string was made of most common words of given text
     :param text: textual data
     :type text: str
