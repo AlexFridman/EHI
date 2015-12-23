@@ -19,10 +19,12 @@ class ExternalMemoryMergeSort:
         temp_res = self._sort_data(0, self._data_size)
         self._copy_from_temp(temp_res, result_path)
 
-    def _is_file_exists(self, path):
+    @staticmethod
+    def _is_file_exists(path):
         return os.path.exists(path)
 
-    def _define_data_size(self, path):
+    @staticmethod
+    def _define_data_size(path):
         with open(path, 'r') as fp:
             return sum(1 for line in fp)
 
