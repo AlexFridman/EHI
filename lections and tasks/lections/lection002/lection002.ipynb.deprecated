@@ -1,7 +1,7 @@
 {
  "metadata": {
   "name": "",
-  "signature": "sha256:5f8b3e49b553ad72ec7d68b5c686c91be1b8534bba99819fbe9fdb3692172c47"
+  "signature": "sha256:28bad90b85b6c66d24f926423c58f3c8098520a7a3a2e7b3c12a7a99be817db4"
  },
  "nbformat": 3,
  "nbformat_minor": 0,
@@ -240,7 +240,7 @@
        ]
       }
      ],
-     "prompt_number": 64
+     "prompt_number": 3
     },
     {
      "cell_type": "code",
@@ -270,7 +270,7 @@
        ]
       }
      ],
-     "prompt_number": 56
+     "prompt_number": 4
     },
     {
      "cell_type": "markdown",
@@ -306,7 +306,7 @@
        ]
       }
      ],
-     "prompt_number": 65
+     "prompt_number": 5
     },
     {
      "cell_type": "markdown",
@@ -342,7 +342,7 @@
        ]
       }
      ],
-     "prompt_number": 76
+     "prompt_number": 6
     },
     {
      "cell_type": "markdown",
@@ -373,7 +373,7 @@
        ]
       }
      ],
-     "prompt_number": 88
+     "prompt_number": 7
     },
     {
      "cell_type": "markdown",
@@ -408,7 +408,7 @@
        ]
       }
      ],
-     "prompt_number": 87
+     "prompt_number": 8
     },
     {
      "cell_type": "markdown",
@@ -514,7 +514,7 @@
        ]
       }
      ],
-     "prompt_number": 90
+     "prompt_number": 9
     },
     {
      "cell_type": "code",
@@ -540,7 +540,7 @@
        ]
       }
      ],
-     "prompt_number": 95
+     "prompt_number": 10
     },
     {
      "cell_type": "code",
@@ -563,7 +563,7 @@
        ]
       }
      ],
-     "prompt_number": 149
+     "prompt_number": 11
     },
     {
      "cell_type": "code",
@@ -592,7 +592,7 @@
        ]
       }
      ],
-     "prompt_number": 100
+     "prompt_number": 12
     },
     {
      "cell_type": "code",
@@ -619,7 +619,7 @@
        ]
       }
      ],
-     "prompt_number": 106
+     "prompt_number": 13
     },
     {
      "cell_type": "code",
@@ -643,7 +643,7 @@
        ]
       }
      ],
-     "prompt_number": 108
+     "prompt_number": 14
     },
     {
      "cell_type": "code",
@@ -673,7 +673,7 @@
        ]
       }
      ],
-     "prompt_number": 118
+     "prompt_number": 15
     },
     {
      "cell_type": "code",
@@ -697,7 +697,7 @@
        ]
       }
      ],
-     "prompt_number": 119
+     "prompt_number": 16
     },
     {
      "cell_type": "code",
@@ -724,7 +724,7 @@
        ]
       }
      ],
-     "prompt_number": 133
+     "prompt_number": 17
     },
     {
      "cell_type": "code",
@@ -757,7 +757,7 @@
        ]
       }
      ],
-     "prompt_number": 134
+     "prompt_number": 18
     },
     {
      "cell_type": "code",
@@ -796,7 +796,7 @@
        ]
       }
      ],
-     "prompt_number": 202
+     "prompt_number": 19
     },
     {
      "cell_type": "code",
@@ -821,7 +821,7 @@
        ]
       }
      ],
-     "prompt_number": 141
+     "prompt_number": 20
     },
     {
      "cell_type": "code",
@@ -844,13 +844,11 @@
        "text": [
         "[5, 7, 1, 10, -1]\n",
         "[-1, 1, 5, 7, 10]\n",
-        "[10, 7, 5, 1, -1]\n",
-        "['abc', 'defg', 'h', 'ij']\n",
-        "['defg', 'abc', 'ij', 'h']\n"
+        "[10, 7, 5, 1, -1]\n"
        ]
       }
      ],
-     "prompt_number": 147
+     "prompt_number": 21
     },
     {
      "cell_type": "code",
@@ -874,7 +872,7 @@
        ]
       }
      ],
-     "prompt_number": 148
+     "prompt_number": 22
     },
     {
      "cell_type": "markdown",
@@ -918,7 +916,7 @@
        ]
       }
      ],
-     "prompt_number": 153
+     "prompt_number": 23
     },
     {
      "cell_type": "markdown",
@@ -972,7 +970,7 @@
        ]
       }
      ],
-     "prompt_number": 159
+     "prompt_number": 24
     },
     {
      "cell_type": "code",
@@ -994,7 +992,7 @@
        ]
       }
      ],
-     "prompt_number": 161
+     "prompt_number": 25
     },
     {
      "cell_type": "code",
@@ -1016,7 +1014,7 @@
        ]
       }
      ],
-     "prompt_number": 162
+     "prompt_number": 26
     },
     {
      "cell_type": "code",
@@ -1037,7 +1035,7 @@
        ]
       }
      ],
-     "prompt_number": 163
+     "prompt_number": 27
     },
     {
      "cell_type": "code",
@@ -1057,7 +1055,7 @@
        ]
       }
      ],
-     "prompt_number": 249
+     "prompt_number": 28
     },
     {
      "cell_type": "code",
@@ -1077,7 +1075,7 @@
        ]
       }
      ],
-     "prompt_number": 250
+     "prompt_number": 29
     },
     {
      "cell_type": "code",
@@ -1104,7 +1102,7 @@
        ]
       }
      ],
-     "prompt_number": 248
+     "prompt_number": 30
     },
     {
      "cell_type": "code",
@@ -1126,7 +1124,7 @@
        ]
       }
      ],
-     "prompt_number": 253
+     "prompt_number": 31
     },
     {
      "cell_type": "markdown",
@@ -1158,24 +1156,7 @@
        "slide_type": "slide"
       }
      },
-     "outputs": [
-      {
-       "name": "stdout",
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "Hi!\n"
-       ]
-      },
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "Hi!\n"
-       ]
-      }
-     ],
-     "prompt_number": 154
+     "outputs": []
     },
     {
      "cell_type": "markdown",
@@ -1228,18 +1209,7 @@
        "slide_type": "slide"
       }
      },
-     "outputs": [
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "{'a': 1, 'b': 2}\n",
-        "{}\n",
-        "{'a': 1, 'b': 2}\n"
-       ]
-      }
-     ],
-     "prompt_number": 188
+     "outputs": []
     },
     {
      "cell_type": "code",
@@ -1253,18 +1223,7 @@
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "1\n",
-        "True\n",
-        "1\n"
-       ]
-      }
-     ],
-     "prompt_number": 191
+     "outputs": []
     },
     {
      "cell_type": "code",
@@ -1276,19 +1235,7 @@
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [
-      {
-       "ename": "KeyError",
-       "evalue": "'c'",
-       "output_type": "pyerr",
-       "traceback": [
-        "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m\n\u001b[0;31mKeyError\u001b[0m                                  Traceback (most recent call last)",
-        "\u001b[0;32m<ipython-input-192-bd0ea5dacece>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;31m# lookup error\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0mcounters\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m{\u001b[0m\u001b[0;34m\"a\"\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0;36m1\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m\"b\"\u001b[0m\u001b[0;34m:\u001b[0m \u001b[0;36m2\u001b[0m\u001b[0;34m}\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0mcounters\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m\"c\"\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
-        "\u001b[0;31mKeyError\u001b[0m: 'c'"
-       ]
-      }
-     ],
-     "prompt_number": 192
+     "outputs": []
     },
     {
      "cell_type": "code",
@@ -1299,16 +1246,7 @@
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "True\n"
-       ]
-      }
-     ],
-     "prompt_number": 195
+     "outputs": []
     },
     {
      "cell_type": "code",
@@ -1322,17 +1260,7 @@
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "{'a': 1, 'b': 2}\n",
-        "{'a': 1}\n"
-       ]
-      }
-     ],
-     "prompt_number": 196
+     "outputs": []
     },
     {
      "cell_type": "markdown",
@@ -1379,18 +1307,7 @@
        "slide_type": "slide"
       }
      },
-     "outputs": [
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "set([])\n",
-        "set([1, 2, 3])\n",
-        "set([1, 2, 3, 4])\n"
-       ]
-      }
-     ],
-     "prompt_number": 208
+     "outputs": []
     },
     {
      "cell_type": "code",
@@ -1404,17 +1321,7 @@
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "set([])\n",
-        "set([1])\n"
-       ]
-      }
-     ],
-     "prompt_number": 210
+     "outputs": []
     },
     {
      "cell_type": "code",
@@ -1427,17 +1334,7 @@
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "set([1, 2, 3])\n",
-        "True\n"
-       ]
-      }
-     ],
-     "prompt_number": 214
+     "outputs": []
     },
     {
      "cell_type": "code",
@@ -1459,20 +1356,7 @@
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "set([1, 2, 3, 4, 5])\n",
-        "set([1, 2, 4, 5])\n",
-        "set([1, 4, 5])\n",
-        "set([4, 5])\n",
-        "set([])\n"
-       ]
-      }
-     ],
-     "prompt_number": 230
+     "outputs": []
     },
     {
      "cell_type": "code",
@@ -1491,21 +1375,7 @@
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "set([1, 2, 3, 4, 5, 6, 7, 8, 9])\n",
-        "set([5, 6, 7, 8, 9, 10, 11, 12, 13, 14])\n",
-        "set([8, 9, 5, 6, 7])\n",
-        "set([1, 2, 3, 4])\n",
-        "set([1, 2, 3, 4, 10, 11, 12, 13, 14])\n",
-        "False\n"
-       ]
-      }
-     ],
-     "prompt_number": 239
+     "outputs": []
     },
     {
      "cell_type": "code",
@@ -1518,25 +1388,7 @@
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "0\n",
-        "1\n",
-        "2\n",
-        "3\n",
-        "4\n",
-        "5\n",
-        "6\n",
-        "7\n",
-        "8\n",
-        "9\n"
-       ]
-      }
-     ],
-     "prompt_number": 241
+     "outputs": []
     },
     {
      "cell_type": "markdown",
@@ -1720,18 +1572,7 @@
        "slide_type": "slide"
       }
      },
-     "outputs": [
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "hello\n",
-        "hello\n",
-        "6\n"
-       ]
-      }
-     ],
-     "prompt_number": 169
+     "outputs": []
     },
     {
      "cell_type": "code",
@@ -1749,17 +1590,7 @@
      ],
      "language": "python",
      "metadata": {},
-     "outputs": [
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "Greetings, stranger\n",
-        "Greetings, user\n"
-       ]
-      }
-     ],
-     "prompt_number": 171
+     "outputs": []
     },
     {
      "cell_type": "markdown",
@@ -1794,17 +1625,7 @@
        "slide_type": "subslide"
       }
      },
-     "outputs": [
-      {
-       "output_type": "stream",
-       "stream": "stdout",
-       "text": [
-        "Hello, World!\n",
-        "This is --IPKernelApp.parent_appname='ipython-notebook'\n"
-       ]
-      }
-     ],
-     "prompt_number": 123
+     "outputs": []
     },
     {
      "cell_type": "markdown",
